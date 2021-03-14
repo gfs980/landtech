@@ -37,6 +37,7 @@ It is like finding all your family root from grand grand grandparents that had c
 The Solution is also easy for this.
 
 <br><br> 4) allow importing the data. Instead of relaying on the data from csv files, we could paste or inserted data and then search it
+<br><br> 5) Build React SPA for this application as at the moment it is only backend focused - Since the code test did not specify what application to build
 
 4. - Keep your solution simple, making effective use of your chosen language.
 5. I have provided all the test including testing the api
