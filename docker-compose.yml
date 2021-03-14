@@ -7,10 +7,10 @@ services:
   node:
     build:
       context: ./server
-      dockerfile: Dockerfile-development
+      dockerfile: Dockerfile
     environment:
       - NODE_PORT=${NODE_PORT}
-      - NODE_ENV=${NODE_ENV}
+      - NODE_ENV=development
     ports:
       - ${NODE_PORT}:${NODE_PORT}
     # Volumes to mount
@@ -22,16 +22,9 @@ services:
 #  ### SETUP CLIENT CONTAINER
 #  ##########################
 #  react:
-#    image: gfs980/mernjs:react-prod
 #    build: ./client
 #    ports:
-#      - 3000:3000
+#      - 8000:8000
 #    links:
 #      - node
 #    restart: always
-# Add this to include data volume for mongo
-# Confirm this is working later
-volumes:
-  ? board-dbdata
-  ? uploaded-files
-  ? translation-files

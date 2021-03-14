@@ -1,14 +1,15 @@
 FROM node:12.10
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app/
+RUN npm install -g nodemon
+
+RUN mkdir -p /app/server
+WORKDIR /app/server
+
+COPY package*.json /app/server/
+
 RUN npm install
 
-COPY . /usr/src/app
+COPY . /app/server/
 
-RUN npm run build
+CMD [ "npm", "run", "dev" ]
 
-EXPOSE 3000
-
-CMD [ "npm", "run", "server" ]
